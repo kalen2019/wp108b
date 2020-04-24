@@ -14,8 +14,9 @@
             <input type="text" id="name" name="name"><p>
             <label for="password">密碼:</label>
             <input type="password" id="password" name="password"><p>
-            <label for="picture">個人照片:</label>
-            <input type="file" name="picture"/><p>
+            <label for="picture" enctype="multipart/form-data">個人照片:</label>
+            <input type="file" onchange="readURL(this)" targetID="imageA" name="picture" accept="image/gif, image/jpeg, image/png"/>
+            <img id="imageA" src="#" width="120px" height="150px"/><p>
             <label for="E-mail">E-mail:</label>
             <input type="text" id="E-mail" name="E-mail"><p>
             <label for="gender">性別:</label>
@@ -44,6 +45,32 @@
                 <button>完成送出</button> <button>取消重填</button>
         </fieldset>
     </form>
+    <圖片預覽js參考網站:https://progressbar.tw/posts/47>
+    <script>
+
+        function readURL(input){
+        
+          if(input.files && input.files[0]){
+        
+            var imageTagID = input.getAttribute("targetID");
+        
+            var reader = new FileReader();
+        
+            reader.onload = function (e) {
+        
+               var img = document.getElementById(imageTagID);
+        
+               img.setAttribute("src", e.target.result)
+        
+            }
+        
+            reader.readAsDataURL(input.files[0]);
+        
+          }
+        
+        }
+        
+        </script>
 </div>
 </body>
 </html>
