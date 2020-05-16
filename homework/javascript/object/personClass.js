@@ -9,8 +9,6 @@ class Person {
     } 
 }
 
-var johnDoe = new Person('John', 'Doe', 5566)
-console.log(johnDoe.fullName())
 
 var kalen = new Person('Wun-Hong', 'Cai', 2019)
 console.log(kalen.fullName())
