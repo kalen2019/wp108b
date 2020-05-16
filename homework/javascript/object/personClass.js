@@ -9,6 +9,5 @@ class Person {
     } 
 }
 
-
 var kalen = new Person('Wun-Hong', 'Cai', 2019)
 console.log(kalen.fullName())
